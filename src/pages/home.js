@@ -28,6 +28,8 @@ export default class Page extends React.Component {
     const newData = Array.isArray(JSON.parse(json)) ? JSON.parse(json)[0] : JSON.parse(json);
     const topic = meta.topic;
 
+    console.log(newData);
+
     if (topic !== 'video') {
       const logKey = `${time}`;
       log[logKey] = {
