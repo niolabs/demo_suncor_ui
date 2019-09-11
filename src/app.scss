@@ -1,0 +1,29 @@
+@import '~@nio/ui-kit/dist/nio.css';
+@import '~font-awesome/css/font-awesome.min.css';
+@import './assets/styles/vars';
+@import './assets/styles/base';
+
+/*    place your app-specific css below (or make component/view   */
+/*    specific scss files and throw them in the css folder)       */
+
+.pg-card {
+  height: 175px;
+}
+
+.photo-holder{
+  margin-top: 30px;
+}
+.pg-photo {
+  height:  calc(100vh - 350px);
+}
+
+#log {
+  margin-top: 30px;
+  border: 1px solid #e6e9ee;
+  height: calc(100vh - 350px);
+  border-radius: 4px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px;
+  font-weight: bold;
+}
