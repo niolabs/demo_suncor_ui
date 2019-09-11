@@ -1,6 +1,6 @@
 {
-  "name": "demo_suncor_ui",
-  "description": "A UI for Suncor",
+  "name": "demo_video_ui",
+  "description": "A UI showcasing nio's ability to stream video",
   "private": true,
   "scripts": {
     "build": "webpack --mode production --config webpack.prod.js",
