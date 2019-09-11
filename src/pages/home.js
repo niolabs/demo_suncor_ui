@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Card, CardBody, Row, Col } from '@nio/ui-kit';
 
 export default class Page extends React.Component {
-  state = { log: {}, frame: false };
+  state = { log: {}, image: false };
 
   componentDidMount = () => {
     const { pkClient } = this.props;
@@ -42,7 +42,7 @@ export default class Page extends React.Component {
   };
 
   render = () => {
-    const { log, frame } = this.state;
+    const { log, image } = this.state;
     return (
       <Row>
         <Col xs="8">
@@ -62,7 +62,7 @@ export default class Page extends React.Component {
         <Col xs="4" className="photo-holder">
           <Card>
             <CardBody className="p-3 pg-photo">
-              {frame && (<img src={`data:image/jpeg;base64,${frame}`} width="100%" />)}
+              {image && (<img src={`data:image/jpeg;base64,${image}`} width="100%" />)}
             </CardBody>
           </Card>
         </Col>
