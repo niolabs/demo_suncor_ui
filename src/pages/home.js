@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { Card, CardBody, Row, Col } from '@nio/ui-kit';
 
 export default class Page extends React.Component {
-  state = { barcode: null, units: null, weight: null, state: null, log: {}, frame: false };
+  state = { log: {}, frame: false };
 
   componentDidMount = () => {
     const { pkClient } = this.props;
-    ['general', 'video'].map(topic => {
+    ['general', 'error', 'success', 'video'].map(topic => {
       pkClient.addPatron(topic, (patron) => {
         patron.on('message', this.writeDataToState);
         return () => {
@@ -29,9 +29,9 @@ export default class Page extends React.Component {
     const topic = meta.topic;
 
     if (topic !== 'video') {
-      const logKey = `${time} ${topic}`;
+      const logKey = `${time}`;
       log[logKey] = {
-        className: topic === 'error' ? 'text-danger' : topic === 'completed' ? 'text-success' : 'text-default',
+        className: topic === 'error' ? 'text-danger' : topic === 'success' ? 'text-success' : 'text-default',
         value: JSON.stringify(newData),
       };
       this.setState({ log });
